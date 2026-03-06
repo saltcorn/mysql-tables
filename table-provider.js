@@ -222,8 +222,8 @@ const configuration_workflow = (req) =>
   });
 
 const getPkName = (cfg) => {
-  const pkField = (cfg.fields || []).find((f) => f.primary_key);
-  return pkField ? pkField.name : "id";
+  const pkField = (cfg?.fields || []).find((f) => f.primary_key);
+  return pkField ? pkField.name : "id"; 
 };
 
 module.exports = {
