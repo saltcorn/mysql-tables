@@ -1,12 +1,12 @@
 {
   "name": "@saltcorn/mysql-tables",
   "version": "0.1.0",
-  "description": "Table provider for remote MySQL tables",
+  "description": "Table provider for remote MySQL and MariaDB tables",
   "main": "index.js",
   "dependencies": {
     "@saltcorn/data": "^1.3.0",
     "@saltcorn/markup": "^1.3.0",
-    "@saltcorn/postgres": "^1.3.0"
+    "mysql2": "^3.11.0"
   },
   "author": "Tom Nielsen",
   "license": "MIT",
