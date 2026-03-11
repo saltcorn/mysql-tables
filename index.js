@@ -13,10 +13,8 @@ module.exports = {
         const pool = await getConnection(connection);
         const conn = await pool.getConnection();
         try {
-          sql_log("SET TRANSACTION READ ONLY;");
-          await conn.query("SET TRANSACTION READ ONLY");
-          sql_log("START TRANSACTION;");
-          await conn.query("START TRANSACTION");
+          sql_log("START TRANSACTION READ ONLY;");
+          await conn.query("START TRANSACTION READ ONLY;");
 
           sql_log(query, parameters || []);
           const [rows, fields] = await conn.query(query, parameters || []);
@@ -29,7 +27,8 @@ module.exports = {
         }
       },
       isAsync: true,
-      description: "Run a read-only SQL query on an external MySQL/MariaDB database",
+      description:
+        "Run a read-only SQL query on an external MySQL/MariaDB database",
       arguments: [
         {
           name: "connection",
